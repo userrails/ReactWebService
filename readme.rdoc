@@ -1,0 +1,21 @@
+package.json
+-------------
+Add this code
+"proxy": "http://localhost:4000",
+
+
+Server side:
+# Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
+gem 'rack-cors'
+
+config/initializers/cors.rb
+----------------------------
+Rails.application.config.middleware.insert_before 0, Rack::Cors do
+  allow do
+    origins '*'
+
+    resource '*',
+      headers: :any,
+      methods: [:get, :post, :put, :patch, :delete, :options, :head]
+  end
+end
