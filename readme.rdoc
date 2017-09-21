@@ -19,3 +19,5 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
       methods: [:get, :post, :put, :patch, :delete, :options, :head]
   end
 end
+
+Note: run RailsApi in seperate port and reactwebservice on seperate port
